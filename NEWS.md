@@ -3,6 +3,8 @@
 ## 3.9.7
 Released 2017-mm-dd
 
+Announcements:
+ - Upgrades camshaft to [0.56.0](https://github.com/CartoDB/camshaft/releases/tag/0.56.0).
 
 ## 3.9.6
 Released 2017-07-11
