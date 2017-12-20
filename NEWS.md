@@ -5,6 +5,7 @@ Released YYYY-MM-DD
 
 Announcements:
  - Validate aggregation input params
+ - Aggregation dataview: Do not cast numeric categories to text
 
 
 ## 4.5.0
