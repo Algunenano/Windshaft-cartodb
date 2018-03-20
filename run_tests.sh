@@ -5,8 +5,8 @@ OPT_CREATE_PGSQL=yes # create the PostgreSQL test environment
 OPT_DROP_REDIS=yes   # drop the redis test environment
 OPT_DROP_PGSQL=yes   # drop the PostgreSQL test environment
 OPT_COVERAGE=no      # run tests with coverage
-OPT_DOWNLOAD_SQL=yes # download a fresh copy of sql files
-OPT_REDIS_CELL=yes   # download redis cell
+OPT_DOWNLOAD_SQL=no # download a fresh copy of sql files
+OPT_REDIS_CELL=no   # download redis cell
 
 export PGAPPNAME=cartodb_tiler_tester
 
