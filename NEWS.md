@@ -6,11 +6,9 @@ Released 2018-mm-dd
 New features:
 - CI tests with Ubuntu Xenial + PostgreSQL 10.1 and Ubuntu Precise + PostgreSQL 9.5
 
-
 Bug Fixes:
 - Validates tile coordinates (z/x/y) from request params to be a valid integer value.
-- Upgrades Windshaft to 4.7.1, which includes a fix in mapnik-vector-tile to avoid grouping together properties with the same value but different type.
-
+- Upgrades Windshaft to [4.7.2](https://github.com/CartoDB/Windshaft/blob/4.7.2/NEWS.md#version-472). 4.7.1 includes a fix for mapnik-vector-tile incorrectly grouping values together. 4.7.2 includes performance improvements for the marker renderer in Mapnik and sets MVT's simplify_distance option to 0.
 
 ## 6.1.0
 Released 2018-04-16
