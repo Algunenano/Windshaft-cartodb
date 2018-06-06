@@ -19,8 +19,8 @@ describe('named maps static view', function() {
     var username = 'localhost';
     var templateName = 'template_with_view';
 
-    var PNG_IMAGE_TOLERANCE = 20;
-    var JPG_IMAGE_TOLERANCE = 100;
+    var PNG_IMAGE_TOLERANCE = 200;
+    var JPG_IMAGE_TOLERANCE = 200;
 
     function createTemplate(view, layers) {
         return {
