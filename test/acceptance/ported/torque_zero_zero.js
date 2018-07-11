@@ -1,4 +1,4 @@
-require('../../support/test_helper');
+const TestClient = require('../../support/test-client');
 
 var assert = require('../../support/assert');
 var testClient = require('./support/test_client');
@@ -19,13 +19,15 @@ describe('torque tiles at 0,0 point', function() {
             what: 'tl',
             x: 3,
             y: 3,
-            expects: []
+            expects: [],
+            expects_fixed: [{"x__uint8":1,"y__uint8":0,"vals__uint8":[1],"dates__uint16":[0]}]
         },
         {
             what: 'tr',
             x: 4,
             y: 3,
-            expects: []
+            expects: [],
+            expects_fixed: [{"x__uint8":0,"y__uint8":0,"vals__uint8":[1],"dates__uint16":[0]}]
         },
         {
             what: 'bl',
@@ -68,13 +70,19 @@ describe('torque tiles at 0,0 point', function() {
                                 '}'
                             ].join(' '),
                             cartocss_version: '2.3.0'
-                        }
+                }
                     }
                 ]
             };
 
             testClient.getTorque(mapConfig, 0, 3, tile.x, tile.y, function(err, res) {
-                assert.deepEqual(JSON.parse(res.body), tile.expects);
+                assert.ok(!err, err);
+                try {
+                    assert.deepEqual(JSON.parse(res.body), tile.expects);
+                } catch (ex) {
+                    // With Proj 5.1 this bug has been fixed and the point appears in all tiles
+                    assert.deepEqual(JSON.parse(res.body), tile.expects_fixed);
+                }
                 done();
             });
         });
