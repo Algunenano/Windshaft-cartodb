@@ -61,6 +61,7 @@ return function () {
             };
 
             const testClient = new TestClient(template, apikeyToken);
+            testClient.keysToDelete['map_tpl|localhost'] = 0;
 
             testClient.getNamedTile(templateName, 0, 0, 0, 'mvt', {}, (err, res, tile) => {
                 if (err) {
